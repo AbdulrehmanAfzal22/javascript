@@ -106,4 +106,11 @@
 // console.log(sum)
 
 // Task:11
+let numbers = function (num) {
+    
 
+let positiveOnly = getPositiveNumbers(num);
+console.log(positiveOnly)
+
+}
+num[1,2,4,4,6.-34,-464]
