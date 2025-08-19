@@ -1,0 +1,1 @@
+let byclassname = document.getElementsByClassName("bg-black")

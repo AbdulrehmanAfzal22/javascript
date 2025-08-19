@@ -1,29 +1,59 @@
-// let input1 = prompt("Enter the number :")
-// let input2 = prompt("Enter an operator ")
-// let input3 = prompt("Enter the second number :")
+const display = document.getElementById("display");
+const buttons = document.querySelectorAll(".buttons button");
 
-let int1 = parseInt(input1)
+let input1 = "";
+let input2 = "";
+let operator = "";
+let result = 0;
 
 
-let int2 = parseInt(input3)
+buttons.forEach((btn) => {
+  btn.onclick = () => {
+    let value = btn.innerText;
 
 
-if (input2 ==="*") {
-   result =  int1*int2
-}
+    if (value === "C") {
+      display.value = "";
+      input1 = "";
+      input2 = "";
+      operator = "";
+      return;
+    }
 
-if (input2 ==="/") {
-   result =  int1/int2
-}
 
-if (input2 ==="%") {
-   result =  int1%int2
-}
+    if (["+", "-", "x", "÷", "%"].includes(value)) {
+      operator = value;
+      input1 = display.value;
+      display.value = "";
+      return;
+    }
 
-if (input2 ==="-") {
-   result =  int1-int2
-}
-if (input2 ==="+") {
-   result =  int1+int2
-}
-console.log(result)
+    if (value === "=") {
+      input2 = display.value;
+
+      let int1 = parseInt(input1);
+      let int2 = parseInt(input2);
+
+      if (operator === "x") {
+        result = int1 * int2;
+      }
+      if (operator === "÷") {
+        result = int1 / int2;
+      }
+      if (operator === "%") {
+        result = int1 % int2;
+      }
+      if (operator === "-") {
+        result = int1 - int2;
+      }
+      if (operator === "+") {
+        result = int1 + int2;
+      }
+
+      display.value = result;
+      return;
+    }
+
+    display.value += value;
+  };
+});
