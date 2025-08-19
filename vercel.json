@@ -1,0 +1,5 @@
+{
+  "routes": [
+    { "src": "/(.*)", "dest": "/My-profile/profile.html" }
+  ]
+}
