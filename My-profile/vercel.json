@@ -1,8 +1,8 @@
 {
   "builds": [
-    { "src": "profile.html", "use": "@vercel/static" }
+    { "src": "My-profile/profile.html", "use": "@vercel/static" }
   ],
   "routes": [
-    { "src": "/(.*)", "dest": "  /profile.html" } 
+    { "src": "/(.*)", "dest": "/My-profile/profile.html" }
   ]
 }
